@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Eliminar cuenta</title>
+    </h:head>
+    <h:body>
+          <h:form id="cuenta">
+        <p:growl id="growl" sticky="true" />
+        
+        <p:dataTable id="cuentaList" var="cuenta" value="#{cuentabeans.cuenta}">
+            
+            <p:column headerText="ID">
+                <h:outputText value="#{cuenta.id}"/>
+            </p:column>
+            
+            <p:column headerText="NOMBRE_CUENTA">
+                <h:outputText id="nombreC" value="#{cuenta.nombreCuenta}"/>
+            </p:column>
+            
+            <p:column headerText="FECHA">
+                <h:outputText id="nombreT" value="#{cuenta.fecha}"/>
+            </p:column>
+            
+            <p:column headerText="CUENTA_1">
+                <h:outputText id="fecha_venta" value="#{cuenta.cuenta1}"/>
+            </p:column>
+            
+            <p:column headerText="CUENTA_2">
+                <h:outputText id="tipo" value="#{cuenta.cuenta2}"/>
+            </p:column>
+            
+         
+           
+                
+            <p:column headerText="Nombre">
+                <p:commandButton update="cuentaList" value="Eliminar" icon="ui-icon-closethick"
+                                 action="#{cuentabeans.Eliminar(cuenta)}"
+                                 styleClass="ui-priority-primary">
+                </p:commandButton>
+            </p:column>
+            
+        </p:dataTable>
+    <br/>
+    </h:form>
+
+    </h:body>
+</html>
+
